@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 25px;
+  background-color: lightcoral;
+  color: black;
+  height: 2rem;
+  padding: 0 1rem;
+}

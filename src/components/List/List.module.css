@@ -1,0 +1,48 @@
+.root {
+  list-style-type: none;
+  width: 300px;
+  border: 1px solid lightgray;
+  margin: 0;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemDragging {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.itemDragged:not(.itemDragging) {
+  transition: transform 0.3s;
+}
+
+.item {
+  cursor: grab;
+  user-select: none;
+}
+
+.itemDisabled {
+  cursor: default;
+}
+
+.item[disabled="true"] {
+  background-color: blue;
+  cursor: default;
+  user-select: none;
+}
+
+.item:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+
+.itemContent {
+  transition: border 0.3s;
+  border: 0px solid lightcoral;
+}
+
+.draggedOver {
+  background-color: white;
+  border-width: 2px;
+}
