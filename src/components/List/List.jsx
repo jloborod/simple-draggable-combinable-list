@@ -57,21 +57,17 @@ class List extends React.Component {
     const { dragId, dragIndex, dragOverId, dragOverIndex } = this.state;
 
     if (dragId && dragOverId && dragId !== dragOverId) {
-      /* This cuases an error on Draggable as they try
-          to setState when the component is unmounted...
-          To push onCombine to the event loop queue, we
-          can do the following:
-
-          setTimeout(() => {
-            onCombine(dragIndex, dragOverIndex);
-          }, 0);
-
+      /*  
+          As Draggable tries to setState when the 
+          component is unmounted, it is needed to
+          push onCombine to the event loop queue.
           onCombine would be run after setState on
           Draggable so it would fix the issue until
           they fix it on their end.
       */
-
-      onCombine(dragIndex, dragOverIndex);
+      setTimeout(() => {
+        onCombine(dragIndex, dragOverIndex);
+      }, 0);
     }
 
     this.setState(this.initialState);
