@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+.idea/
+
+# testing
+coverage/
+
+# build
+build/
+
+# misc
+.DS_Store*
+npm-debug.log*
+
+# newrelic
+newrelic_agent.log
+
+#terraform
+**/.terraform/
